@@ -14,14 +14,14 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('RW News'),
+        title: Image.asset(
+          'assets/images/logo.png',
+          width: 180,
+        ),
       ),
-      body: Column(
-        children: [
-          ArticleCard(
-            article: articles[0],
-          ),
-        ],
+      body: ListView.builder(
+        itemCount: articles.length,
+        itemBuilder: (context, index) => ArticleCard(article: articles[index]),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
